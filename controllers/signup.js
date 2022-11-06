@@ -36,9 +36,9 @@ router.post(
 );
 
 function checkloggedinuser(req, res, next) {
-  console.log(req.headers)
-  const {authorization} = req.headers || req.headers;
-const tokenHeader = authorization.split(' ')[1]
+  console.log(req.headers);
+  const { authorization } = req.headers || req.headers;
+  const tokenHeader = authorization.split(" ")[1];
   if (tokenHeader) {
     jwt.verify(tokenHeader, server_secret_key, function (err, decoded) {
       if (!err) {
@@ -70,9 +70,9 @@ router.get(
 router.post(
   "/login",
   catchasyncerror(async function (req, res, next) {
-    console.log(req.body)
+    console.log(req.body);
     const { email, password } = req.body;
-console.log(req.body)
+    console.log(req.body);
     // checking if user has given password and email both
 
     if (!email || !password) {
